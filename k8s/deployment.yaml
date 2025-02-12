@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dycel-deployment
+  labels:
+    app: dycel
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: dycel
+  template:
+    metadata:
+      labels:
+        app: dycel
+    spec:
+      tolerations:
+      - key: "key"
+        operator: "Equal"
+        value: "value"
+        effect: "NoSchedule"
+      containers:
+      - name: dycel-container
+        image: cailyncodes90/do-your-containers-even-lift-web:latest
+        ports:
+        - containerPort: 8080
