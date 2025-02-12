@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercise Finder</title>
+</head>
+<body>
+    <h1>Find Exercises by Muscle Group</h1>
+    <form method="post">
+        <input type="text" name="muscle" placeholder="Enter muscle (e.g., biceps)" required>
+        <button type="submit">Search</button>
+    </form>
+    <ul>
+        {% for exercise in exercises %}
+            <li><strong>{{ exercise.name }}</strong>: {{ exercise.instructions }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
