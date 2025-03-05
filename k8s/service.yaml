@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dycel-service
+  labels:
+    app: dycel
+spec:
+  type: LoadBalancer
+  selector:
+    app: dycel
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 8000
