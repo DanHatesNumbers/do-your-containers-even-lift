@@ -61,7 +61,7 @@ $ docker compose down
 First, ensure `pipx` is setup by following the [pipx setup docs](https://github.com/pypa/pipx).
 
 ``` shell
-pipx install devpi-server supervisor
+pipx install devpi-server devpi-client supervisor
 supervisord -c supervisor-config/supervisord.conf
 
 mkdir -p ~/.config/pip
