@@ -67,6 +67,7 @@ supervisord -c supervisor-config/supervisord.conf
 devpi use http://localhost:3141
 devpi user -c dycel password=SuperSecretPassword
 devpi login dycel --password=SuperSecretPassword
+devpi index -c dev bases=root/pypi
 
 mkdir -p ~/.config/pip
 echo << EOF >> ~/.config/pip/pip.conf
