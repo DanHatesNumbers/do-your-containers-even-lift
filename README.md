@@ -76,5 +76,5 @@ Then use pip as normal, and DevPi will act as a pull through cache. Remove the i
 ### Stopping
 
 ``` shell
-supervisorctl -c supervisor-config/supervisord.conf stop
+supervisorctl -c supervisor-config/supervisord.conf shutdown
 ```
