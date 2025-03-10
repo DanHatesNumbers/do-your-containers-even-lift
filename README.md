@@ -55,3 +55,19 @@ Stop and remove the containers
 ```
 $ docker compose down
 ```
+
+## DevPi PyPi mirror
+First, ensure `pipx` is setup by following the [pipx setup docs](https://github.com/pypa/pipx).
+
+``` shell
+pipx install devpi-server supervisor
+supervisord -c supervisor-config/supervisord.conf
+
+mkdir -p ~/.config/pip
+echo << EOF >> ~/.config/pip/pip.conf
+[global]
+index-url = http://localhost:3141/root/pypi/+simple/
+EOF
+```
+
+Then use pip as normal, and DevPi will act as a pull through cache. Remove the index-url configured in `~/.config/pip/pip.conf`
