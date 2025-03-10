@@ -57,6 +57,7 @@ $ docker compose down
 ```
 
 ## DevPi PyPi mirror
+### Setup and starting
 First, ensure `pipx` is setup by following the [pipx setup docs](https://github.com/pypa/pipx).
 
 ``` shell
@@ -71,3 +72,9 @@ EOF
 ```
 
 Then use pip as normal, and DevPi will act as a pull through cache. Remove the index-url configured in `~/.config/pip/pip.conf`
+
+### Stopping
+
+``` shell
+supervisorctl -c supervisor-config/supervisord.conf stop
+```
