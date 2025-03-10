@@ -76,10 +76,12 @@ index-url = http://localhost:3141/root/pypi/+simple/
 EOF
 ```
 
-Then use pip as normal, and DevPi will act as a pull through cache. Remove the index-url configured in `~/.config/pip/pip.conf`
+Then use pip as normal, and DevPi will act as a pull through cache. 
 
 ### Stopping
 
 ``` shell
 supervisorctl -c supervisor-config/supervisord.conf shutdown
 ```
+
+Remove the index-url configured in `~/.config/pip/pip.conf`
