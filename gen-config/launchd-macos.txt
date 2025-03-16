@@ -1,0 +1,15 @@
+On macOS you can let devpi-server be run at startup via launchctl.
+
+Place the example net.devpi.plist file in ~/Library/LaunchAgents/
+
+Then use the following command to initialize and start the service:
+
+  launchctl load -w ~/Library/LaunchAgents/net.devpi.plist
+
+To stop devpi-server, use the following command:
+
+  launchctl stop net.devpi
+
+To prevent the service from being run at startup use:
+
+  launchctl unload ~/Library/LaunchAgents/net.devpi.plist
