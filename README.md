@@ -63,9 +63,10 @@ First, ensure `pipx` is setup by following the [pipx setup docs](https://github.
 ``` shell
 pipx install devpi-server devpi-client supervisor
 devpi-gen-config
+devpi-init
 supervisord -c gen-config/supervisord.conf
 
-devpi use http://localhost:3141
+devpi use http://localhost:3141/root/pypi
 devpi user -c dycel password=SuperSecretPassword
 devpi login dycel --password=SuperSecretPassword
 devpi index -c dev bases=root/pypi
