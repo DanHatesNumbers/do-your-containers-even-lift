@@ -81,3 +81,11 @@ supervisorctl -c supervisor-config/supervisord.conf shutdown
 ```
 
 Remove the index-url configured in `~/.config/pip/pip.conf`
+
+## Secrets in Layers
+``` shell
+cd app
+docker build -t cailyncodes90/do-your-containers-even-lift-web:latest .
+docker image save cailyncodes90/do-your-containers-even-lift-web:latest > cailyncodes90_do-your-containers-even-lift-web_latest.tar
+docker run --rm -it -v "$PWD:/pwd" trufflesecurity/trufflehog:latest docker --image file:///pwd/cailyncodes90_do-your-containers-even-lift-web_latest.tar
+```
