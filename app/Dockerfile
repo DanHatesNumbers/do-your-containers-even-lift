@@ -3,9 +3,13 @@ FROM --platform=$BUILDPLATFORM python:3.10-alpine AS builder
 
 WORKDIR /app
 
+COPY pip.conf /etc/pip.conf
+
 COPY requirements.txt /app
 RUN --mount=type=cache,target=/root/.cache/pip \
-    pip3 install -r requirements.txt
+    pip3 install --trusted-host host.docker.internal -r requirements.txt
+
+RUN rm /etc/pip.conf
 
 COPY . /app
 

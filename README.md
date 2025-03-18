@@ -55,3 +55,29 @@ Stop and remove the containers
 ```
 $ docker compose down
 ```
+
+## DevPi PyPi mirror
+### Setup and starting
+First, ensure `pipx` is setup by following the [pipx setup docs](https://github.com/pypa/pipx).
+
+``` shell
+pipx install devpi-server devpi-client supervisor
+devpi-gen-config
+supervisord -c gen-config/supervisord.conf
+
+devpi use http://localhost:3141
+devpi user -c dycel password=SuperSecretPassword
+devpi login dycel --password=SuperSecretPassword
+devpi index -c dev bases=root/pypi
+devpi use http://localhost:3141/dycel/dev --set-cfg
+```
+
+Then use pip as normal, and DevPi will act as a pull through cache. 
+
+### Stopping
+
+``` shell
+supervisorctl -c supervisor-config/supervisord.conf shutdown
+```
+
+Remove the index-url configured in `~/.config/pip/pip.conf`
