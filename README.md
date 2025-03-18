@@ -69,12 +69,7 @@ devpi use http://localhost:3141
 devpi user -c dycel password=SuperSecretPassword
 devpi login dycel --password=SuperSecretPassword
 devpi index -c dev bases=root/pypi
-
-mkdir -p ~/.config/pip
-echo << EOF >> ~/.config/pip/pip.conf
-[global]
-index-url = http://localhost:3141/root/pypi/+simple/
-EOF
+devpi use http://localhost:3141/dycel/dev --set-cfg
 ```
 
 Then use pip as normal, and DevPi will act as a pull through cache. 
