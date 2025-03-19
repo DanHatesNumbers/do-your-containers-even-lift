@@ -11,7 +11,13 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 
 RUN rm /etc/pip.conf
 
+RUN adduser -D dycel-user
+
+USER dycel-user
+
 COPY . /app
+
+HEALTHCHECK CMD curl --fail http://localhost:8000 || exit 1
 
 ENTRYPOINT ["python3"]
 CMD ["app.py"]
