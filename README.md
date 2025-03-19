@@ -90,3 +90,12 @@ docker build -t cailyncodes90/do-your-containers-even-lift-web:latest .
 docker image save cailyncodes90/do-your-containers-even-lift-web:latest > cailyncodes90_do-your-containers-even-lift-web_latest.tar
 docker run --rm -it -v "$PWD:/pwd" trufflesecurity/trufflehog:latest docker --image file:///pwd/cailyncodes90_do-your-containers-even-lift-web_latest.tar
 ```
+
+## Recording demos
+Assumes you have [asciinema](https://docs.asciinema.org/manual/cli/installation/), [asciinema-gif-generator](https://docs.asciinema.org/manual/agg/installation/) and [asciinema-scenario](https://github.com/garbas/asciinema-scenario/tree/v0.3.0) installed.
+
+``` shell
+cd demo-scenes
+asciinema-scenario trivy_image_before.scene > trivy_image_before.cast && agg trivy_image_before.cast trivy_image_before.gif --cols 200 --rows 50 --font-size=32
+```
+

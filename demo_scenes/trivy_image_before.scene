@@ -1,0 +1,91 @@
+#!{ "step": 0.7, "width": 200, "height": 50 }
+dan@Behemoth:~/do-your-containers-even-lift/app$ trivy image cailyncodes90/do-your-containers-even-lift-web:latest --scanners vuln,misconfig
+2025-03-19T11:08:19Z    INFO    [vuln] Vulnerability scanning is enabled
+2025-03-19T11:08:19Z    INFO    [misconfig] Misconfiguration scanning is enabled
+2025-03-19T11:08:19Z    INFO    Detected OS     family="alpine" version="3.21.3"
+2025-03-19T11:08:19Z    INFO    [alpine] Detecting vulnerabilities...   os_version="3.21" repository="3.21" pkg_num=37
+2025-03-19T11:08:19Z    INFO    Number of language-specific files       num=1
+2025-03-19T11:08:19Z    INFO    [python-pkg] Detecting vulnerabilities...
+2025-03-19T11:08:19Z    INFO    Detected config files   num=1
+2025-03-19T11:08:19Z    INFO    Table result includes only package filenames. Use '--format json' option to get the full path to the package file.
+
+Report Summary
+
+┌──────────────────────────────────────────────────────────────────────────────────┬────────────┬─────────────────┬───────────────────┐
+│                                      Target                                      │    Type    │ Vulnerabilities │ Misconfigurations │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼───────────────────┤
+│ cailyncodes90/do-your-containers-even-lift-web:latest (alpine 3.21.3)            │   alpine   │        0        │         -         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼───────────────────┤
+│ usr/local/lib/python3.10/site-packages/MarkupSafe-3.0.2.dist-info/METADATA       │ python-pkg │        0        │         -         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼───────────────────┤
+│ usr/local/lib/python3.10/site-packages/blinker-1.9.0.dist-info/METADATA          │ python-pkg │        0        │         -         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼───────────────────┤
+│ usr/local/lib/python3.10/site-packages/certifi-2025.1.31.dist-info/METADATA      │ python-pkg │        0        │         -         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼───────────────────┤
+│ usr/local/lib/python3.10/site-packages/charset_normalizer-3.4.1.dist-info/METAD- │ python-pkg │        0        │         -         │
+│ ATA                                                                              │            │                 │                   │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼───────────────────┤
+│ usr/local/lib/python3.10/site-packages/click-8.1.8.dist-info/METADATA            │ python-pkg │        0        │         -         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼───────────────────┤
+│ usr/local/lib/python3.10/site-packages/flask-3.1.0.dist-info/METADATA            │ python-pkg │        0        │         -         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼───────────────────┤
+│ usr/local/lib/python3.10/site-packages/idna-3.10.dist-info/METADATA              │ python-pkg │        0        │         -         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼───────────────────┤
+│ usr/local/lib/python3.10/site-packages/itsdangerous-2.2.0.dist-info/METADATA     │ python-pkg │        0        │         -         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼───────────────────┤
+│ usr/local/lib/python3.10/site-packages/jinja2-3.1.6.dist-info/METADATA           │ python-pkg │        0        │         -         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼───────────────────┤
+│ usr/local/lib/python3.10/site-packages/pip-23.0.1.dist-info/METADATA             │ python-pkg │        1        │         -         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼───────────────────┤
+│ usr/local/lib/python3.10/site-packages/requests-2.32.3.dist-info/METADATA        │ python-pkg │        0        │         -         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼───────────────────┤
+│ usr/local/lib/python3.10/site-packages/setuptools-65.5.1.dist-info/METADATA      │ python-pkg │        1        │         -         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼───────────────────┤
+│ usr/local/lib/python3.10/site-packages/urllib3-2.3.0.dist-info/METADATA          │ python-pkg │        0        │         -         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼───────────────────┤
+│ usr/local/lib/python3.10/site-packages/werkzeug-3.1.3.dist-info/METADATA         │ python-pkg │        0        │         -         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼───────────────────┤
+│ usr/local/lib/python3.10/site-packages/wheel-0.45.1.dist-info/METADATA           │ python-pkg │        0        │         -         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼───────────────────┤
+│ app/Dockerfile                                                                   │ dockerfile │        -        │         2         │
+└──────────────────────────────────────────────────────────────────────────────────┴────────────┴─────────────────┴───────────────────┘
+Legend:
+- '-': Not scanned
+- '0': Clean (no security findings detected)
+#timeout: 1.5
+
+Python (python-pkg)
+
+Total: 2 (UNKNOWN: 0, LOW: 0, MEDIUM: 1, HIGH: 1, CRITICAL: 0)
+
+┌───────────────────────┬───────────────┬──────────┬────────┬───────────────────┬───────────────┬──────────────────────────────────────────────────────────┐
+│        Library        │ Vulnerability │ Severity │ Status │ Installed Version │ Fixed Version │                          Title                           │
+├───────────────────────┼───────────────┼──────────┼────────┼───────────────────┼───────────────┼──────────────────────────────────────────────────────────┤
+│ pip (METADATA)        │ CVE-2023-5752 │ MEDIUM   │ fixed  │ 23.0.1            │ 23.3          │ pip: Mercurial configuration injectable in repo revision │
+│                       │               │          │        │                   │               │ when installing via pip                                  │
+│                       │               │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2023-5752                │
+├───────────────────────┼───────────────┼──────────┤        ├───────────────────┼───────────────┼──────────────────────────────────────────────────────────┤
+│ setuptools (METADATA) │ CVE-2024-6345 │ HIGH     │        │ 65.5.1            │ 70.0.0        │ pypa/setuptools: Remote code execution via download      │
+│                       │               │          │        │                   │               │ functions in the package_index module in...              │
+│                       │               │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2024-6345                │
+└───────────────────────┴───────────────┴──────────┴────────┴───────────────────┴───────────────┴──────────────────────────────────────────────────────────┘
+
+app/Dockerfile (dockerfile)
+
+Tests: 28 (SUCCESSES: 26, FAILURES: 2)
+Failures: 2 (UNKNOWN: 0, LOW: 1, MEDIUM: 0, HIGH: 1, CRITICAL: 0)
+
+AVD-DS-0002 (HIGH): Specify at least 1 USER command in Dockerfile with non-root user as argument
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+AVD-DS-0026 (LOW): Add HEALTHCHECK instruction in your Dockerfile
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
