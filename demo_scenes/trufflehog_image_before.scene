@@ -1,0 +1,52 @@
+#!{ "step": 0.7, "width": 200, "height": 50 }
+$ docker image save cailyncodes90/do-your-containers-even-lift-web:latest > image.tar | trufflehog docker --image file://image.tar --log-level=-1 --no-verification
+🐷🔑🐷  TruffleHog. Unearth your secrets. 🐷🔑🐷
+
+Found unverified result 🐷🔑❓
+Detector Type: URI
+Decoder Type: PLAIN
+Raw result: http://dycel:SuperSecretPassword@host.docker.internal:3141
+File: /etc/pip.conf
+Image: image.tar
+Layer: sha256:6d348b0dd34542158df78b39bdcff3166fd3ea27b0b4bd000621e23d1861f714
+
+Found unverified result 🐷🔑❓
+Detector Type: URI
+Decoder Type: PLAIN
+Raw result: http://dycel:SuperSecretPassword@host.docker.internal:3141
+File: /app/pip.conf
+Image: image.tar
+Layer: sha256:20eab1b977a08adf8c5348de338b1bcc66e28b2b12b58eb8b1e220bf25a0303d
+
+Found unverified result 🐷🔑❓
+Detector Type: URI
+Decoder Type: PLAIN
+Raw result: http://username:password@host.com:80
+File: /usr/local/lib/python3.10/site-packages/pip/_vendor/urllib3/util/__pycache__/url.cpython-310.pyc
+Image: image.tar
+Layer: sha256:0ed4ddd670b1ef8100f64e02246be4848c4218cab806b89b044f8e27e278d42c
+
+Found unverified result 🐷🔑❓
+Detector Type: URI
+Decoder Type: PLAIN
+Raw result: https://username:password@host.com:80
+File: /usr/local/lib/python3.10/site-packages/urllib3/util/url.py
+Image: image.tar
+Layer: sha256:0ed4ddd670b1ef8100f64e02246be4848c4218cab806b89b044f8e27e278d42c
+
+Found unverified result 🐷🔑❓
+Detector Type: URI
+Decoder Type: PLAIN
+Raw result: https://username:password@host.com:80
+File: /usr/local/lib/python3.10/site-packages/urllib3/util/__pycache__/url.cpython-310.pyc
+Image: image.tar
+Layer: sha256:0ed4ddd670b1ef8100f64e02246be4848c4218cab806b89b044f8e27e278d42c
+
+Found unverified result 🐷🔑❓
+Detector Type: URI
+Decoder Type: PLAIN
+Raw result: http://username:password@host.com:80
+File: /usr/local/lib/python3.10/site-packages/pip/_vendor/urllib3/util/url.py
+Image: image.tar
+Layer: sha256:954913bccdb79258f59906d89281206cf957d6a3b94ed51ca61ae47d1c0db4b6
+--
