@@ -96,6 +96,6 @@ Assumes you have [asciinema](https://docs.asciinema.org/manual/cli/installation/
 
 ``` shell
 cd demo-scenes
-asciinema-scenario trivy_image_before.scene > trivy_image_before.cast && agg trivy_image_before.cast trivy_image_before.gif --cols 200 --rows 50 --font-size=32
-asciinema-scenario trufflehog_image_before.scene > trufflehog_image_before.cast && agg trufflehog_image_before.cast trufflehog_image_before.gif --cols 200 --rows 50 --font-size=32 --font-dir=./
+asciinema-scenario trivy_image_before.scene > trivy_image_before.cast && agg trivy_image_before.cast trivy_image_before.gif --cols 160 --rows 40 --font-size=48
+asciinema-scenario trufflehog_image_before.scene > trufflehog_image_before.cast && agg trufflehog_image_before.cast trufflehog_image_before.gif --cols 120 --rows 40 --font-size=48 --font-dir=./
 ```
