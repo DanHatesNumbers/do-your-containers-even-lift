@@ -1,5 +1,5 @@
 #! { "step": 0.07, "width": 120, "height": 40 }
-$ docker image save cailyncodes90/do-your-containers-even-lift-web:latest > image.tar && trufflehog docker --image file://image.tar --log-level=-1 --no-verification
+$ docker image save cailyncodes90/do-your-containers-even-lift-web:after > image.tar && trufflehog docker --image file://image.tar --log-level=-1 --no-verification
 🐷🔑🐷  TruffleHog. Unearth your secrets. 🐷🔑🐷
 
 Found unverified result 🐷🔑❓

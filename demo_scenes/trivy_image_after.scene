@@ -1,5 +1,5 @@
 #! { "step": 0.07, "width": 160, "height": 40 }
-$ trivy image cailyncodes90/do-your-containers-even-lift-web:latest --scanners vuln,misconfig
+$ trivy image cailyncodes90/do-your-containers-even-lift-web:after --scanners vuln,misconfig
 2025-03-22T15:48:24Z    INFO    [vuln] Vulnerability scanning is enabled
 2025-03-22T15:48:24Z    INFO    [misconfig] Misconfiguration scanning is enabled
 2025-03-22T15:48:24Z    INFO    Detected OS     family="alpine" version="3.21.3"
@@ -13,7 +13,7 @@ Report Summary
 ┌──────────────────────────────────────────────────────────────────────────────────┬────────────┬─────────────────┬───────────────────┐
 │                                      Target                                      │    Type    │ Vulnerabilities │ Misconfigurations │
 ├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼───────────────────┤
-│ cailyncodes90/do-your-containers-even-lift-web:latest (alpine 3.21.3)            │   alpine   │        0        │         -         │
+│ cailyncodes90/do-your-containers-even-lift-web:after (alpine 3.21.3)             │   alpine   │        0        │         -         │
 ├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼───────────────────┤
 │ usr/local/lib/python3.14/site-packages/blinker-1.9.0.dist-info/METADATA          │ python-pkg │        0        │         -         │
 ├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼───────────────────┤
