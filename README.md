@@ -111,4 +111,7 @@ cd demo-scenes
 asciinema-scenario trivy_image_before.scene > trivy_image_before.cast && agg trivy_image_before.cast trivy_image_before.gif --cols 160 --rows 40 --font-size=48
 asciinema-scenario trufflehog_image_before.scene > trufflehog_image_before.cast && agg trufflehog_image_before.cast trufflehog_image_before.gif --cols 120 --rows 40 --font-size=48 --font-dir=./
 asciinema-scenario trivy_replicaset_before.scene > trivy_replicaset_before.cast && agg trivy_replicaset_before.cast trivy_replicaset_before.gif --cols 160 --rows 40 --font-size=48 --font-dir=./
+
+asciinema-scenario trivy_image_after.scene > trivy_image_after.cast && agg trivy_image_after.cast trivy_image_after.gif --cols 160 --rows 40 --font-size=48 --font-dir=./
+asciinema-scenario trufflehog_image_after.scene > trufflehog_image_after.cast && agg trufflehog_image_after.cast trufflehog_image_after.gif --cols 120 --rows 40 --font-size=48 --font-dir=./
 ```
