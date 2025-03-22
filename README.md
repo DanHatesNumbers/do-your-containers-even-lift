@@ -91,6 +91,18 @@ docker image save cailyncodes90/do-your-containers-even-lift-web:latest > cailyn
 docker run --rm -it -v "$PWD:/pwd" trufflesecurity/trufflehog:latest docker --image file:///pwd/cailyncodes90_do-your-containers-even-lift-web_latest.tar
 ```
 
+``` shell
+cd app
+python3 -m venv .venv
+source .venv/bin/activate
+devpi use --set-cfg -t yes http://localhost:3141/dycel/dev
+cat .venv/pip.conf | sed 's/localhost/host\.docker\.internal/g' | tee .venv/pip.conf
+docker build -t cailyncodes90/do-your-containers-even-lift-web:latest --secret id=pipconf,src=.venv/pip.conf .
+docker image save cailyncodes90/do-your-containers-even-lift-web:latest > cailyncodes90_do-your-containers-even-lift-web_latest.tar
+docker run --rm -it -v "$PWD:/pwd" trufflesecurity/trufflehog:latest docker --image file:///pwd/cailyncodes90_do-your-containers-even-lift-web_latest.tar
+
+```
+
 ## Recording demos
 Assumes you have [asciinema](https://docs.asciinema.org/manual/cli/installation/), [asciinema-gif-generator](https://docs.asciinema.org/manual/agg/installation/) and [asciinema-scenario](https://github.com/garbas/asciinema-scenario/tree/v0.3.0) installed.
 
