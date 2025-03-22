@@ -89,3 +89,4 @@ You should add HEALTHCHECK instruction in your docker container images to perfor
 
 See https://avd.aquasec.com/misconfig/ds026
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+--
