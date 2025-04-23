@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: dycel-deployment
+  namespace: dycel # namespacing allows more granualar controls
   labels:
     app: dycel
 spec:
@@ -16,7 +17,25 @@ spec:
     spec:
       containers:
       - name: dycel-container
-        image: cailyncodes90/do-your-containers-even-lift-web:latest
+        image: cailyncodes90/dycel-after@sha256:14bd4d21baed3b5de948b0c63cd9d89b3068ff9f067244e5b0e8e02fea2dfe32 # pin the image version
         ports:
         - containerPort: 8000
         imagePullPolicy: IfNotPresent
+        securityContext: # security context allows us to set permissions for the container, reducing to least privilege
+          runAsUser: 20000
+          runAsGroup: 40000
+          readOnlyRootFilesystem: true
+          runAsNonRoot: true
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+              - ALL
+          seccompProfile:
+            type: RuntimeDefault
+        resources: # prevents malicious use of resources (DoS attacks, crypto mining, etc.)
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
